@@ -19,7 +19,8 @@ const TodoPage = () => {
     <Box sx={{height: '100vh'}}>
     <Container>
         <Navbar />
-        <TodoList />
+        <TotalCompleteItems displayTodos={displayTodos} display={display} />
+        <TodoList display={display} />
         <AddTodoForm />
     </Container>
     </Box>
