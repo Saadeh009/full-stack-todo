@@ -9,6 +9,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import TodoPage from './TodoPage';
 const App = () => {
+
 	return (
 		<Routes>
 			<Route path='/' element={<Register />} />
