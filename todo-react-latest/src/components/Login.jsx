@@ -5,7 +5,6 @@ import { Button, Box, Container, Typography, Grid, TextField } from '@mui/materi
 import { StyledTextFieldDark } from "./StyledTextField";
 import { useDispatch } from 'react-redux';
 import { loginUserAsync } from '../redux/userSlice';
-import { addToken } from '../redux/accessTokenSlice';
 
 const Register = () => {
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -26,17 +25,11 @@ const Register = () => {
       }
       let user = await dispatch(loginUserAsync({email: email, password: password}))
       if (user.payload !== "user not found") {
-        dispatch(addToken(user.payload.user.accessToken))
         const jwt = user.payload.user.accessToken
         const userId = user.payload.user.id
         localStorage.setItem("jwt", jwt);
         localStorage.setItem("userId", userId);
-        navigate('/todos', {
-          state: {
-            email: email,
-            accessToken: user.payload.user.accessToken
-          }
-        })
+        navigate('/todos')
       } else {
         alert("user not found")
       }

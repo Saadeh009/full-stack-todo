@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
 import { Button, Box, Container, Typography, Grid, TextField } from '@mui/material'
@@ -37,12 +37,7 @@ const Register = () => {
           const userId = user.payload.user.id
           localStorage.setItem("jwt", jwt);
           localStorage.setItem("userId", userId);
-          navigate('/todos', {
-            state: {
-              email: email,
-              accessToken: user.payload.user.accessToken
-            }
-          })
+          navigate('/todos')
         } else {
           alert("user already exists")
         }

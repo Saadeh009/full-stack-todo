@@ -65,8 +65,6 @@ let todos = [
 const deleteMsg = 'Successfully deleted the required todo item.'
 const updateMsg = 'Successfully updated the required todo item.'
 
-app.get('/users', (req, res) => res.status(200).send(users)) 
-
 app.post('/user/login', (req, res) => {
 	const {email, password} = req.body
 	for (u of users) {

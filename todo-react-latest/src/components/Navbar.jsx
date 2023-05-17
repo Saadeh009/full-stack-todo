@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, ThemeProvider, Toolbar, Typography } from '@mui/material'
+import { Avatar, Box, Typography } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import React from 'react'
 import { useLocation } from "react-router-dom";

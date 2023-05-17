@@ -1,11 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-export const getUsersAsync = createAsyncThunk('/users/getUsersAsync', async () => {
-    const res = await fetch('http://localhost:3080/users')
-    if (res.ok) {
-        const data = await res.json()
-        return { data }
-    }
-})
 export const loginUserAsync = createAsyncThunk('/users/loginUserAsync', async (payload) => {
     const res = await fetch('http://localhost:3080/user/login', {
         method: 'POST',

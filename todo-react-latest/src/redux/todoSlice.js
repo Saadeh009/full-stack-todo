@@ -9,7 +9,6 @@ export const getTodosAsync = createAsyncThunk('/todos/getTodosAsync', async (pay
     if (res.ok) {
         const data = await res.json()
         const response = data.data.todos
-        console.log("TODOS:", response);
         return { response }
     }
 })
