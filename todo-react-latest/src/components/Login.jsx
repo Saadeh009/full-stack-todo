@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
 import { Button, Box, Container, Typography, Grid, TextField } from '@mui/material'
-import { StyledTextField } from "./StyledTextField";
+import { StyledTextFieldDark } from "./StyledTextField";
 import { useDispatch } from 'react-redux';
 import { loginUserAsync } from '../redux/userSlice';
 import { addToken } from '../redux/accessTokenSlice';
@@ -57,7 +57,7 @@ const Register = () => {
             Log in
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: {xs: '65vw' , sm: '39vw', display: 'flex', flexDirection: 'column', alignItems: 'center'  } }}>
-            <StyledTextField
+            <StyledTextFieldDark
               required
               fullWidth
               placeholder="Email Address"
@@ -67,7 +67,7 @@ const Register = () => {
               sx={{ my: 3 }}
               inputProps={{sx: { height: 50}}}
             />
-            <StyledTextField
+            <StyledTextFieldDark
               required
               fullWidth
               value={password}
