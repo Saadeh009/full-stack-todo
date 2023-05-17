@@ -1,6 +1,6 @@
 import React from 'react';
 import { completedTodoAsync, deleteTodo, deleteTodoAsync, toggleComplete } from '../redux/todoSlice';
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { Box, Checkbox, Paper, Typography } from '@mui/material';
 import Delete from '@mui/icons-material/Delete';
 const TodoItem = ({ id, title, completed, accessToken }) => {
